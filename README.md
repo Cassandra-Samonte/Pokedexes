@@ -7,7 +7,7 @@ It is the early days of Pokemon, and Nintendo wants to build a website featuring
 **NOTE:** You will not need to create a `.env` file since the PokeAPI does not require you to use an API key.
 
 
-## Part 1: The Kanto Pokedex
+## MVP: The Kanto Pokedex
 To start out with, build out a *gallery* and a *details* page that will display data about pokemon in the Kanto Pokedex.
 
 ### The Gallery
@@ -52,21 +52,22 @@ res.data.sprites.other["official-artwork"].front_default
 </details>
 
 
-## Part 2: Make the Gallery Dynamic
+## Bonus/Stretch Goal: Make the Gallery Dynamic
 Now that you've built out a functioning gallery and details page, it's time to make your gallery more dynamic! Instead of just viewing information about pokemon in the Kanto region, your gallery will be able to display cards for pokemon in whatever region the user specifies. Here's how this will work:
 - Update the URL pattern for the gallery. The URL should now look like this:
     ```
     '/gallery/:pokedexId'
     ```
 - Using the `pokedexId` URL parameter, send an axios request in your route to the PokeAPI to get data about the respective Pokedex. 
+    
     For example, if the user navigates to `/gallery/4` on your site, your route will send an axios request to:
     ```
     https://pokeapi.co/api/v2/pokedex/4
     ```
 - Pass the data you get back from your axios request into the EJS file for your gallery. Now, whenever the `pokedexId` in your URL changes you'll see new pokemon data being rendered in your gallery!
-- Make a new home page for your site that displays a list of all the regions found at [this endpoint](https://pokeapi.co/api/v2/pokedex?offset=0&limit=32). When a user clicks on a region in your list, navigate them to the gallery page for that respective region. For example, if a user clicks on `galar` in your list of regions, navigate the user to the URL `/gallery/27`.
-
-
-## Bonus
-- Include [CSS animations](https://www.w3schools.com/css/css3_animations.asp) or [transitions](https://www.w3schools.com/css/css3_transitions.asp) to make the user experience more engaging. Think about hover effects or atmospheric animations.
-- Create a "404 Not Found" page for when a user tries to access a URL that doesn't exist.
+- Make a new home page for your site that displays a list of all the regions found at [this endpoint](https://pokeapi.co/api/v2/pokedex?offset=0&limit=32). When a user clicks on a region in your list, navigate the user to that region's gallery page. 
+    
+    For example, if a user clicks on `galar` in your list of regions, navigate the user to the URL `/gallery/27`. Your route would then send an axios request to this API endpoint:
+    ```
+    https://pokeapi.co/api/v2/pokedex/27/
+    ```
