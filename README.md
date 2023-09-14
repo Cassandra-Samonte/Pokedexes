@@ -1,4 +1,4 @@
-# Nintendo Commissions: Building Pokedexes
+# Nintendo Commission: Building Pokedexes
 <img src="https://i.imgur.com/9VqkwNV.jpg" width="100%">
 
 ## Background
