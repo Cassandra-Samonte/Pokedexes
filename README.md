@@ -68,5 +68,5 @@ Now that you've built out a functioning gallery and details page, it's time to m
 
 
 ## Bonus
-- Include CSS animations or transitions to make the user experience more engaging. Think about hover effects or atmospheric animations.
+- Include [CSS animations](https://www.w3schools.com/css/css3_animations.asp) or [transitions](https://www.w3schools.com/css/css3_transitions.asp) to make the user experience more engaging. Think about hover effects or atmospheric animations.
 - Create a "404 Not Found" page for when a user tries to access a URL that doesn't exist.
