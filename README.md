@@ -11,12 +11,12 @@ It is the early days of Pokemon, and Nintendo wants to build a website featuring
 To start out with, build out a *gallery* and a *details* page that will display data about pokemon in the Kanto Pokedex.
 
 ### The Gallery
-- Nintendo wants the home page of the app to display all the Pokemon in the Kanto Pokedex, found at [this endpoint](https://pokeapi.co/api/v2/pokedex/2/).
-- Nintendo wants the gallery to be comprised of cards that display the Pokemon's picture, name, and type.
+- Nintendo wants the home page of the app to display all the pokemon in the Kanto Pokedex, found at [this endpoint](https://pokeapi.co/api/v2/pokedex/2/).
+- Nintendo wants the gallery to be comprised of cards that display the pokemon's picture, name, and type.
 
 
 ### Pokemon Details
-- When a Pokemon "card" is clicked on, the user should see a page that displays everything you see on the Pokemon card and more advanced details about the Pokemon such as:
+- When a pokemon's "card" is clicked on, the user should see a page that displays everything you see on the Pokemon card and more advanced details about the Pokemon such as:
     - The number of games it appears in
     - It's abilities
     - Base HP & Base Attack
@@ -26,8 +26,8 @@ To start out with, build out a *gallery* and a *details* page that will display 
 
 ### Hints
 <details>
-<summary>How to get all the Pokemon URLs for Kanto:</summary>
-In the below image you'll notice that each Pokemon is found in the <code>pokemon_entries</code> array. Each Pokemon is represented as an object that contains and entry number and info about the Pokemon species. You can slightly modify the <code>url</code> value of each Pokemon species to get it's expansive details page!
+<summary>How to get all the pokemon URLs for Kanto:</summary>
+In the below image you'll notice that each pokemon is found in the <code>pokemon_entries</code> array. Each pokemon is represented as an object that contains and entry number and info about the pokemon species. You can slightly modify the <code>url</code> value of each pokemon species to get it's expansive details page!
 
 <br/>
 <img src="https://i.imgur.com/IAxbUe3.png">
@@ -36,18 +36,18 @@ In the below image you'll notice that each Pokemon is found in the <code>pokemon
 Consider creating a loop that iterates over each object in the <code>pokemon_entries</code> array and does the following:
 <ul>
 <li>Modifies the URL so it changes from something like <code>https://pokeapi.co/api/v2/pokemon-species/ditto</code> to <code>https://pokeapi.co/api/v2/pokemon/ditto</code></li>
-<li>Use <code>fetch</code> or <code>axios</code> to send an AJAX request to the newly modified endpoint to get info about each Pokemon!
+<li>Use <code>fetch</code> or <code>axios</code> to send an AJAX request to the newly modified endpoint to get info about each pokemon!
 </ul>
 </details>
 
 
 <details>
-<summary>How to get the Pokemon's picture:</summary>
-There's several photos you can use, all nested in the <code>sprites</code> object on each Pokemon's detail page. A possible photo you could use would be found using this expression:
+<summary>How to get the pokemon's picture:</summary>
+There's several photos you can use, all nested in the <code>sprites</code> object on each pokemon's detail page. A possible photo you could use would be found using this expression:
 
 ```js
-res.sprites.other["official-artwork"].front_default
-// Where res is the response you get from sending an AJAX request to a Pokemon's endpoint
+res.data.sprites.other["official-artwork"].front_default
+// Where res.data is the respone data you get from sending an axios request to a pokemon's endpoint
 ```
 </details>
 
