@@ -23,10 +23,6 @@ module.exports = {
         }
         return url
     },
-
-    // getPage: async function() {
-    //     const 
-    // }
 }
 
 

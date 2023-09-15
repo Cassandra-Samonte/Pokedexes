@@ -11,16 +11,15 @@
     <h1><%= pokedex[i].name %></h1>
     <h3>Pokemon Details</h3>
     <ul>
-        <li>Number of Games <%= pokemon.name%> Appears In: <%= movie.runtime %></li>
+        <li>Number of Games <%= pokemon.name%> Appears In: <%= gamesCount %></li>
         <li>Abilities:
-            <% for (let lang of movie.spoken_languages) { %>
-            <%= lang.english_name %>,
-            <%}%>
+            <% for (let ability of pokemon.abilities) { %>
+            <%= ability.ability.name %>,
+            <% } %>
         </li>
-        <li>Base HP & Base Attack: </li>
-        <li></li>
+        <li>Base HP: <%= pokemon.stats[0].base_stat %></li>
+        <li>Base Attack: <%= pokemon.stats[1].base_stat %></li>
     </ul>
-    
 
 </body>
 
