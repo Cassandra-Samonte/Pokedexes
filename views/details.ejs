@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pokemon.name%> | Details</title>
+</head>
+
+<body>
+    <h1><%= pokedex[i].name %></h1>
+    <h3>Pokemon Details</h3>
+    <ul>
+        <li>Number of Games <%= pokemon.name%> Appears In: <%= movie.runtime %></li>
+        <li>Abilities:
+            <% for (let lang of movie.spoken_languages) { %>
+            <%= lang.english_name %>,
+            <%}%>
+        </li>
+        <li>Base HP & Base Attack: </li>
+        <li></li>
+    </ul>
+    
+
+</body>
+
+</html>

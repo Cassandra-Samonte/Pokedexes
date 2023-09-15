@@ -1,0 +1,21 @@
+{
+  "name": "dlvr-pokedexes",
+  "version": "1.0.0",
+  "description": "<img src=\"https://i.imgur.com/9VqkwNV.jpg\" width=\"100%\">",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js -e css,ejs,js,json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "connect-livereload": "^0.6.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "livereload": "^0.9.3"
+  }
+}

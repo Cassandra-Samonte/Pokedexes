@@ -1,0 +1,104 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Scrollbar styles for webkit browsers */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 4px;
+}
+
+body {
+    background: linear-gradient(90deg, #4B495E 0%, #817E9F 50%, #4B495E 100%);
+}
+
+nav {
+    background-color: rgb(71, 30, 30);
+    text-align: center;
+    padding: 1rem;
+}
+
+nav h1 a {
+    color: white;
+}
+
+/* Layout styles */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Card styles */
+.movie-card {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 1rem 0;
+    width: 25vw;
+    min-width: 200px;
+    max-width: 350px;
+    position: relative;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+    justify-content: center !important;
+}
+
+
+.movie-card figcaption {
+    padding: 0 1rem;
+}
+
+.movie-card h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Card description styles */
+article {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    color: white;
+    height: 0;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: overlay;
+    transition: height 0.5s ease;
+}
+
+.movie-card:hover article {
+    height: 100%;
+}
+
+article p {
+    line-height: 1.75;
+    font-size: 14px;
+    padding: 10px;
+}
+
+article p:last-child {
+    margin-top: 1rem;
+    border-top: 2px solid white;
+}
