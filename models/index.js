@@ -1,29 +1,29 @@
 /* Require modules
 --------------------------------------------------------------- */
-const axios = require('axios')
-
+const axios = require('axios');
 
 /* Export API functions
 --------------------------------------------------------------- */
 module.exports = {
-    // Async function that returns a new page of pokemon data
     getKantoData: async function() {
-        const pokemonData = await axios.get(`https://pokeapi.co/api/v2/pokedex/2/`)
-        const pokemonEntries = pokemonData.data.pokemon_entries
-        let url=[]
+        const pokemonData = await axios.get('https://pokeapi.co/api/v2/pokedex/2/');
+        const pokemonEntries = pokemonData.data.pokemon_entries;
+        
+        let pokemonDetails = [];
+        
         for (let entry of pokemonEntries) {
-            const replaceUrl = entry.pokemon_species.url.replace("-species", "")
-            const data = await axios.get(replaceUrl)
-            let obj = {
+            const detailsUrl = entry.pokemon_species.url.replace("-species", "");
+            const data = await axios.get(detailsUrl);
+            let pokemonInfo = {
+                id: data.data.id,
                 name: data.data.name,
-                sprite: data.data.sprites.front_default,
-                types: data.data.types[0].type.name
-            }
-            url.push(obj)
+                sprite: data.data.sprites.other["official-artwork"].front_default,
+                types: data.data.types.map(typeInfo => typeInfo.type.name) 
+            };
+
+            pokemonDetails.push(pokemonInfo);
         }
-        return url
-    },
+
+        return pokemonDetails;
+    }
 }
-
-
-

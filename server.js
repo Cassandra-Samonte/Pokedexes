@@ -40,18 +40,17 @@ app.use(connectLiveReload())
 
 /* Mount routes
 --------------------------------------------------------------- */
-
 app.get('/gallery', async (req, res) => {
         const pokedexes = await api.getKantoData();
         res.render('home', { pokedex: pokedexes });
         console.log(pokedexes)
 })
 
-app.get('/pokemon/:id', async (req, res) => {
-        const pokedexes = await api.getKantoData();
-        const pokemon = pokedexes[req.params.id];
-        res.render('details', { pokemon });
+app.get('/pokemon/:id', (req, res) => {
+    api.getDetails(req.params.id)
+        .then(data => res.render('details', { pokemonDetails: data }))
 })
+
 
 /* Tell the app to "listen" or run on the specified port
 --------------------------------------------------------------- */

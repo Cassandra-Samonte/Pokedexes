@@ -4,23 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= pokemon.name%> | Details</title>
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="/main.css">
 </head>
 
 <body>
-    <h1><%= pokedex[i].name %></h1>
-    <h3>Pokemon Details</h3>
-    <ul>
-        <li>Number of Games <%= pokemon.name%> Appears In: <%= gamesCount %></li>
-        <li>Abilities:
-            <% for (let ability of pokemon.abilities) { %>
-            <%= ability.ability.name %>,
-            <% } %>
-        </li>
-        <li>Base HP: <%= pokemon.stats[0].base_stat %></li>
-        <li>Base Attack: <%= pokemon.stats[1].base_stat %></li>
-    </ul>
-
+    <h1><%= pokemonDetails.name %></h1>
 </body>
 
 </html>
