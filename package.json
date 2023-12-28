@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.5.1",
+    "axios": "^1.6.3",
+    "axois": "^0.0.1-security",
     "connect-livereload": "^0.6.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
